@@ -1,0 +1,61 @@
+import React from "react";
+import { Link, Switch, Route } from "react-router-dom";
+// Components //
+import AddCardScreen from "./deck-cards/AddCardScreen";
+import CreateDeckScreen from "./decks-create/CreateDeckScreen";
+import DeckScreen from "./decks/DeckScreen";
+import EditDeckScreen from "./decks-edit/EditDeckScreen";
+import EditCardScreen from "./deck-cards/EditCardScreen";
+import Home from "./Home";
+import Header from "./Header";
+import NotFound from "./NotFound";
+import Study from "./decks-study/Study";
+
+function Layout() {
+  
+  return (
+    <>
+      <Header />
+      <div className="container">
+      <Link to="/decks/new" className="btn btn-secondary btn-lg">
+            Create Deck
+      </Link>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route path="/decks/new">
+            <CreateDeckScreen />
+          </Route>
+
+          <Route path="/decks/:deckId/cards/new">
+            <AddCardScreen />
+          </Route>
+
+          <Route path="/decks/:deckId/cards/:cardId/edit">
+            <EditCardScreen />
+          </Route>
+
+          <Route path="/decks/:deckId/edit">
+            <EditDeckScreen />
+          </Route>
+
+          <Route path="/decks/:deckId/study">
+            <Study />
+          </Route>
+
+          <Route path="/decks/:deckId">
+            <DeckScreen />
+          </Route>
+
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
+      </div>
+    </>
+  );
+}
+
+export default Layout;
