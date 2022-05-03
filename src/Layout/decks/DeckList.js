@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { listDecks } from "../utils/api/index";
+import { listDecks } from "../../utils/api/index";
 import Deck from "./Deck";
-import NotFound from "../Layout/NotFound";
+import NotFound from "../NotFound";
 
 function DeckList() {
     const [decks, setDecks] = useState([]);

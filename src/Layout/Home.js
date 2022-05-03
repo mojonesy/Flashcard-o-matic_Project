@@ -1,19 +1,20 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
-
-import DeckList from "./DeckList";
-import Deck from "./Deck";
+import CreateDeck from "./decks-create/CreateDeck";
+import DeckList from "./decks/DeckList";
+import Deck from "./decks/Deck";
 
 function Home() {
 
     return (
       <>
-        <Link to="/decks/new" className="btn btn-secondary btn-lg">
-            Create Deck
-        </Link>
         <Switch>
             <Route exact path="/">
                 <DeckList />
+            </Route>
+
+            <Route path="/decks/new">
+                <CreateDeck />
             </Route>
 
             <Route path="/decks/:deckId">
