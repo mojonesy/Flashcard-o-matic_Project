@@ -13,7 +13,7 @@ function DeckList() {
         const abortController = new AbortController();
         async function loadDecks() {
             try {
-                const response = await(listDecks(abortController.signal));
+                const response = await listDecks(abortController.signal);
                 const apiResponse = await response.json();
                 setDecks(apiResponse);
             } catch (error) {
