@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 // Components //
 import AddCardScreen from "./deck-cards/AddCardScreen";
 import CreateDeckScreen from "./decks-create/CreateDeckScreen";
@@ -11,15 +11,12 @@ import Header from "./Header";
 import NotFound from "./NotFound";
 import Study from "./decks-study/Study";
 
+
 function Layout() {
-  
   return (
     <>
       <Header />
       <div className="container">
-      <Link to="/decks/new" className="btn btn-secondary btn-lg">
-            Create Deck
-      </Link>
         <Switch>
           <Route exact path="/">
             <Home />
