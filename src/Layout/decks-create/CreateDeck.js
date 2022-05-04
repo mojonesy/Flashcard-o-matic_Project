@@ -48,7 +48,12 @@ function CreateDeck(){
         <div>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li className="breadcrumb-item">
+                        <Link to="/">
+                        <span className="oi oi-home" style={{marginRight: "5px"}} />
+                        Home
+                        </Link>
+                    </li>
                     <li className="breadcrumb-item active" aria-current="page">Create Deck</li>
                 </ol>
             </nav>
