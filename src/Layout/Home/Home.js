@@ -46,18 +46,10 @@ function Home() {
                         <div className="card-body">
                             <h6 className="card-title">{deck.cards.length} cards</h6>
                             <p className="card-text">{deck.description}</p>
-                            <div className="container">
-                             <div className="row">
-                                <div className="col-2" style={{padding:"0px"}}>
-                                    <ViewButton />
-                                </div>
-                                <div className="col" style={{padding:"0px"}}>
-                                    <StudyButton />
-                                </div>
-                                <div className="col-2" style={{padding:"0px"}}>
-                                    <DeleteButton />
-                                </div>
-                             </div>
+                            <div class="d-flex">
+                              <div class="pr-2"><ViewButton /></div>
+                              <div class=""><StudyButton /></div>
+                              <div class="ml-auto"><DeleteButton /></div>
                             </div>
                         </div>
                     </div>
