@@ -2,6 +2,7 @@ import React from "react";
 import { createDeck } from "../../utils/api/index";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import "./CreateDeck.css";
 
 function CreateDeck(){
     const history = useHistory();
