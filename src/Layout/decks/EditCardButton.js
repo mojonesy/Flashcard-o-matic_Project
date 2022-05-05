@@ -7,7 +7,7 @@ function EditCardButton({ cardId }) {
     return (
         <>
         <Link to={`${url}/cards/${cardId}/edit`} className="btn btn-secondary">
-            <span className="oi oi-pencil" />
+            <span className="oi oi-pencil" style={{marginRight:"5px"}}/>
             Edit
         </Link>
         </>
