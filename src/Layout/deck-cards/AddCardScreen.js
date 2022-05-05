@@ -7,11 +7,11 @@ function AddCardScreen() {
     const history = useHistory();
     const deckId = useParams().deckId;
     const [deck, setDeck] = useState("");
-    const [cardData, setCardData] = useState({ ...initialFormState });
     const initialFormState = {
         front: "",
         back: ""
     };
+    const [cardData, setCardData] = useState({ ...initialFormState });
 
     // Retrieve deck with deckId and set deckName //
     useEffect(() => {

@@ -2,7 +2,6 @@ import React from "react";
 import { createDeck } from "../../utils/api/index";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import NotFound from "../NotFound";
 
 function CreateDeck(){
     const history = useHistory();
@@ -18,7 +17,7 @@ function CreateDeck(){
         setDeckData({ ...deckData, [target.name]: target.value});
     };
 
-    // Handle submit, createDeck(), and navigate to new deck page with new :deckId //
+    // Handle submit, createDeck(), navigate to new deck page with new :deckId //
     const handleSubmit = (event) => {
         event.preventDefault();
         let newDeckId = "";
@@ -31,7 +30,7 @@ function CreateDeck(){
                 newDeckId = apiResponse.id;
             } catch (error) {
                 if (error.name === "AbortError") {
-                    return <NotFound />;
+                    console.log("Aborted");
                 } else {
                     throw error;
                 }
@@ -57,7 +56,9 @@ function CreateDeck(){
                     <li className="breadcrumb-item active" aria-current="page">Create Deck</li>
                 </ol>
             </nav>
+
             <h1>Create Deck</h1>
+
             <form onSubmit={handleSubmit}>
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>

@@ -6,10 +6,10 @@ import CreateDeckScreen from "./decks-create/CreateDeckScreen";
 import DeckScreen from "./decks/DeckScreen";
 import EditDeckScreen from "./decks-edit/EditDeckScreen";
 import EditCardScreen from "./deck-cards/EditCardScreen";
-import Home from "./Home";
+import Home from "./Home/Home";
 import Header from "./Header";
 import NotFound from "./NotFound";
-import Study from "./decks-study/Study";
+import Study from "./decks-study/StudyScreen";
 
 
 function Layout() {
