@@ -47,8 +47,8 @@ function Home() {
                             <h6 className="card-title">{deck.cards.length} cards</h6>
                             <p className="card-text">{deck.description}</p>
                             <div class="d-flex">
-                              <div class="pr-2"><ViewButton /></div>
-                              <div class=""><StudyButton /></div>
+                              <div class="pr-2"><ViewButton deckId={deck.id} /></div>
+                              <div class=""><StudyButton deckId={deck.id} /></div>
                               <div class="ml-auto"><DeleteButton /></div>
                             </div>
                         </div>
