@@ -8,6 +8,7 @@ import EditCardButton from "./EditCardButton";
 import StudyButton from "../Home/StudyButton";
 import AddCardsButton from "./AddCardsButton";
 import DeleteCardButton from "./DeleteCardButton";
+import DeleteDeckButton from "../Home/DeleteDeckButton";
 
 function DeckScreen() {
     const deckId = useParams().deckId;
@@ -46,7 +47,7 @@ function DeckScreen() {
           <div className="pr-2"><EditDeckButton deckId={deck.id} /></div>
           <div className="pr-2"><StudyButton /></div>
           <div><AddCardsButton deckId={deck.id} /></div>
-          <div className="ml-auto"><DeleteButton /></div>
+          <div className="ml-auto"><DeleteDeckButton /></div>
         </div>
 
         <h2 style={{marginTop:"25px"}}>Cards</h2>
@@ -69,7 +70,7 @@ function DeckScreen() {
                                     <EditCardButton cardId={card.id} />
                                   </div>
                                   <div>
-                                    <DeleteCardButton deckId={deckId} />
+                                    <DeleteCardButton cardId={card.id} />
                                   </div>
                                 </div>
                             </div>
