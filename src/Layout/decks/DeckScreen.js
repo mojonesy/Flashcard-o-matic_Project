@@ -1,13 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { readDeck } from "../../utils/api";
+import { readDeck } from "../../utils/api/index";
 import { Link, useParams } from "react-router-dom";
 // Components //
 import EditDeckButton from "./EditDeckButton";
 import EditCardButton from "./EditCardButton";
 import StudyButton from "../Home/StudyButton";
 import AddCardsButton from "./AddCardsButton";
-import DeleteButton from "../Home/DeleteButton";
+import DeleteCardButton from "./DeleteCardButton";
 
 function DeckScreen() {
     const deckId = useParams().deckId;
@@ -16,23 +16,14 @@ function DeckScreen() {
 
     // Load deck using deckId //
     useEffect(() => {
-        const abortController = new AbortController();
         async function loadDeck() {
-            try {
-                const response = await readDeck(deckId, abortController.signal);
-                setDeck(response);
-                setCards(deck.cards);
-            } catch (error) {
-                if (error.name === "AbortError") {
-                    console.log("Aborted");
-                } else {
-                    throw error;
-                }
-            }
+            const response = readDeck(deckId);
+            const deckFromResponse = await response;
+            setDeck(deckFromResponse);
+            setCards(deckFromResponse.cards);
         }
         loadDeck();
-        return () => abortController.abort();
-    }, []);
+    }, [deckId]);
     
 
     return (
@@ -75,10 +66,10 @@ function DeckScreen() {
                                 <p className="card-text">{card.back}</p>
                                 <div className="d-flex" style={{justifyContent:"right"}}>
                                   <div className="pr-2">
-                                    <EditCardButton />
+                                    <EditCardButton cardId={card.id} />
                                   </div>
                                   <div>
-                                    <DeleteButton />
+                                    <DeleteCardButton deckId={deckId} />
                                   </div>
                                 </div>
                             </div>
