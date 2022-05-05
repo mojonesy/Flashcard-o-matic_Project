@@ -6,7 +6,7 @@ import "./Home.css";
 import CreateDeckButton from "./CreateDeckButton";
 import StudyButton from "./StudyButton";
 import ViewButton from "./ViewButton";
-import DeleteButton from "./DeleteButton";
+import DeleteDeckButton from "./DeleteDeckButton";
 
 
 function Home() {
@@ -49,7 +49,7 @@ function Home() {
                             <div className="d-flex">
                               <div className="pr-2"><ViewButton deckId={deck.id} /></div>
                               <div><StudyButton deckId={deck.id} /></div>
-                              <div className="ml-auto"><DeleteButton /></div>
+                              <div className="ml-auto"><DeleteDeckButton /></div>
                             </div>
                         </div>
                     </div>
