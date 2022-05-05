@@ -7,6 +7,8 @@ function AddCardScreen() {
     const history = useHistory();
     const deckId = useParams().deckId;
     const [deck, setDeck] = useState("");
+
+    // Card form //
     const initialFormState = {
         front: "",
         back: ""
@@ -26,7 +28,6 @@ function AddCardScreen() {
     const handleChange = ({ target }) => {
         setCardData({ ...cardData, [target.name]: target.value});
     };
-
     // Handle submit, createCard() //
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -45,7 +46,6 @@ function AddCardScreen() {
             }
         }
         newCard();
-
         setCardData({ ...initialFormState });
     };
 
@@ -68,8 +68,8 @@ function AddCardScreen() {
             <h1>{deck.name}: Add Card</h1>
 
             <form onSubmit={handleSubmit}>
-                <div class="mb-3">
-                    <label for="front" class="form-label">Front</label>
+                <div className="mb-3">
+                    <label for="front" className="form-label">Front</label>
                     <textarea 
                         className="form-control" 
                         id="front"
@@ -81,8 +81,8 @@ function AddCardScreen() {
                         value={cardData.front} 
                     />
                 </div>
-                <div class="mb-3">
-                    <label for="back" class="form-label">Back</label>
+                <div className="mb-3">
+                    <label for="back" className="form-label">Back</label>
                     <textarea 
                         className="form-control" 
                         id="back" 
