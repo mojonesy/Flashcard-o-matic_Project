@@ -46,10 +46,10 @@ function Home() {
                         <div className="card-body">
                             <h6 className="card-title">{deck.cards.length} cards</h6>
                             <p className="card-text">{deck.description}</p>
-                            <div class="d-flex">
-                              <div class="pr-2"><ViewButton deckId={deck.id} /></div>
-                              <div class=""><StudyButton deckId={deck.id} /></div>
-                              <div class="ml-auto"><DeleteButton /></div>
+                            <div className="d-flex">
+                              <div className="pr-2"><ViewButton deckId={deck.id} /></div>
+                              <div><StudyButton deckId={deck.id} /></div>
+                              <div className="ml-auto"><DeleteButton /></div>
                             </div>
                         </div>
                     </div>
