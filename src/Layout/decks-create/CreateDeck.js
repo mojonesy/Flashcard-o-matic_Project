@@ -2,7 +2,6 @@ import React from "react";
 import { createDeck } from "../../utils/api/index";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import "./CreateDeck.css";
 
 function CreateDeck(){
     const history = useHistory();
@@ -49,7 +48,7 @@ function CreateDeck(){
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                        <Link to="/">
+                        <Link to="/" style={{color:"teal"}}>
                         <span className="oi oi-home" style={{marginRight: "5px"}} />
                         Home
                         </Link>
