@@ -17,11 +17,10 @@ function AddCardScreen() {
     useEffect(() => {
         async function loadDeck() {
             const response = await readDeck(deckId);
-            const apiResponse = await response.json();
-            setDeck(apiResponse);
+            setDeck(response);
         }
         loadDeck();
-    }, []);
+    }, [deckId]);
 
     // Input change handler //
     const handleChange = ({ target }) => {
@@ -36,8 +35,7 @@ function AddCardScreen() {
         async function newCard(){
             try {
                 const response = await createCard(deckId, cardData, abortController.signal);
-                const apiResponse = await response.json();
-                console.log(apiResponse);
+                console.log(response);
             } catch (error) {
                 if (error.name === "AbortError") {
                     console.log("Aborted");
