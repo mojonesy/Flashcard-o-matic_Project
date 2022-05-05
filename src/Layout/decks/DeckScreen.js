@@ -4,6 +4,7 @@ import { readDeck } from "../../utils/api";
 import { Link, useParams } from "react-router-dom";
 // Components //
 import EditDeckButton from "./EditDeckButton";
+import EditCardButton from "./EditCardButton";
 import StudyButton from "../Home/StudyButton";
 import AddCardsButton from "./AddCardsButton";
 import DeleteButton from "../Home/DeleteButton";
@@ -20,6 +21,7 @@ function DeckScreen() {
             try {
                 const response = await readDeck(deckId, abortController.signal);
                 setDeck(response);
+                setCards(deck.cards);
             } catch (error) {
                 if (error.name === "AbortError") {
                     console.log("Aborted");
@@ -31,9 +33,6 @@ function DeckScreen() {
         loadDeck();
         return () => abortController.abort();
     }, []);
-
-    // Load deck cards from corresponding deck //
-
     
 
     return (
@@ -57,6 +56,37 @@ function DeckScreen() {
           <div className="pr-2"><StudyButton /></div>
           <div><AddCardsButton deckId={deck.id} /></div>
           <div className="ml-auto"><DeleteButton /></div>
+        </div>
+
+        <h2 style={{marginTop:"25px"}}>Cards</h2>
+        {/* Map cards in deck to display as Bootstrap cards */}
+        <div id="cardList">
+            {cards.map((card) => {
+                return (
+                    <div key={card.id} className="card">
+                        <div className="card-body">
+                         <div className="row">
+                            <div className="col">
+                                <h6>Question</h6>
+                                <p className="card-text">{card.front}</p>
+                            </div>
+                            <div className="col">
+                                <h6>Answer</h6>
+                                <p className="card-text">{card.back}</p>
+                                <div className="d-flex" style={{justifyContent:"right"}}>
+                                  <div className="pr-2">
+                                    <EditCardButton />
+                                  </div>
+                                  <div>
+                                    <DeleteButton />
+                                  </div>
+                                </div>
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+                );
+            })}
         </div>
         </>
     );
