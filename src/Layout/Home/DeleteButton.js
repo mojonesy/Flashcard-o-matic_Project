@@ -1,10 +1,14 @@
 import React from "react";
+import { deleteDeck } from "../../utils/api";
 
-function DeleteButton() {
+function DeleteButton({ deckId }) {
     // TODO: implement window.confirm //
+    const handleDelete = () => {
+        if (window.confirm("Delete this "))
+    }
 
     return (
-        <button className="btn btn-danger">
+        <button onClick={} className="btn btn-danger">
             <span className="oi oi-trash" />
         </button>
     )
