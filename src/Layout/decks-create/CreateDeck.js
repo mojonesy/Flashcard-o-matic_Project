@@ -6,11 +6,13 @@ import { Link, useHistory } from "react-router-dom";
 function CreateDeck(){
     const history = useHistory();
     
+    // Set initial empty form state //
     const initialFormState = {
         name: "",
         description: ""
     };
     const [deckData, setDeckData] = useState({ ...initialFormState });
+    
     
     // Input change handler //
     const handleChange = ({ target }) => {
@@ -44,7 +46,7 @@ function CreateDeck(){
 
 
     return (
-        <div>
+        <>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item">
@@ -100,7 +102,7 @@ function CreateDeck(){
                     > Submit
                 </button>
             </form>
-        </div>
+        </>
     );
 };
 
