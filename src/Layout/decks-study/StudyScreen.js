@@ -15,11 +15,10 @@ function StudyScreen() {
     // Load deck using deckId, set cards from deck, set current card to view //
     useEffect(() => {
         async function loadDeck() {
-            const response = readDeck(deckId);
-            const apiResponse = await response;
-            setDeck(apiResponse);
-            setCards(apiResponse.cards);
-            setCurrentCard(apiResponse.cards[0]);
+            const response = await readDeck(deckId);
+            setDeck(response);
+            setCards(response.cards);
+            setCurrentCard(response.cards[0]);
         }
         loadDeck();
     }, [deckId]);
