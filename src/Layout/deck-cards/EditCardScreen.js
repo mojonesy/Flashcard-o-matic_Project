@@ -4,12 +4,10 @@ import { useParams, useHistory, Link } from "react-router-dom";
 import { readDeck, readCard, updateCard } from "../../utils/api/index";
 
 function EditCardScreen() {
-    // Obtain cardId and deckId from params //
+    const history = useHistory();
     const cardId = useParams().cardId;
     const deckId = useParams().deckId;
-    const history = useHistory();
 
-    
     // Obtain deck from deckId //
     const [deck, setDeck] = useState("");
     useEffect(() => {
