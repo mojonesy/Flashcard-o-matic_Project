@@ -62,8 +62,8 @@ function CreateDeck(){
             <h1>Create Deck</h1>
 
             <form onSubmit={handleSubmit}>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
+                <div className="mb-3">
+                    <label htmlFor="name" className="form-label">Name</label>
                     <input 
                         type="text" 
                         className="form-control" 
@@ -75,8 +75,8 @@ function CreateDeck(){
                         value={deckData.name} 
                     />
                 </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
+                <div className="mb-3">
+                    <label htmlFor="description" className="form-label">Description</label>
                     <textarea 
                         className="form-control" 
                         id="description" 
