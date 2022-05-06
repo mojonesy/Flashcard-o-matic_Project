@@ -49,7 +49,7 @@ function EditDeckScreen() {
         <h1>Edit Deck</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    <label for="name" className="form-label">Name</label>
+                    <label htmlFor="name" className="form-label">Name</label>
                     <input 
                         type="text" 
                         className="form-control" 
@@ -58,11 +58,11 @@ function EditDeckScreen() {
                         placeholder={deck.name}
                         required={true}
                         onChange={handleChange}
-                        value={deck.name} 
+                        value={`${deck.name}`} 
                     />
                 </div>
                 <div className="mb-3">
-                    <label for="description" className="form-label">Description</label>
+                    <label htmlFor="description" className="form-label">Description</label>
                     <textarea 
                         className="form-control" 
                         id="description" 
