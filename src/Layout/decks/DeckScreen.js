@@ -45,7 +45,7 @@ function DeckScreen() {
         <p>{deck.description}</p>
         <div className="container d-flex px-0">
           <div className="pr-2"><EditDeckButton deckId={deck.id} /></div>
-          <div className="pr-2"><StudyButton /></div>
+          <div className="pr-2"><StudyButton deckId={deckId} /></div>
           <div><AddCardsButton deckId={deck.id} /></div>
           <div className="ml-auto"><DeleteDeckButton /></div>
         </div>
