@@ -69,7 +69,7 @@ function AddCardScreen() {
 
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    <label for="front" className="form-label">Front</label>
+                    <label htmlFor="front" className="form-label">Front</label>
                     <textarea 
                         className="form-control" 
                         id="front"
@@ -82,7 +82,7 @@ function AddCardScreen() {
                     />
                 </div>
                 <div className="mb-3">
-                    <label for="back" className="form-label">Back</label>
+                    <label htmlFor="back" className="form-label">Back</label>
                     <textarea 
                         className="form-control" 
                         id="back" 
