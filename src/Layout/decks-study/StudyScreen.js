@@ -25,7 +25,7 @@ function StudyScreen() {
     }, [deckId]);
 
 
-    // If deck contains more than 2 cards, display first card in deck //
+    // If deck contains more than 2 cards, display StudyCard //
     if (cards.length > 2) {
         return (
             <>
@@ -43,9 +43,6 @@ function StudyScreen() {
             </nav>
 
             <h1>{deck.name}: Study</h1>
-                    {/* Display front of card. When Flip button is clicked, display back of card.
-                        If Flip button is clicked again, display front of card. If Next button is
-                        clicked, display next card in deck. */}
                 <StudyCard currentCard={currentCard} setCurrentCard={setCurrentCard} cards={cards} />
             </>
         );
