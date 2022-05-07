@@ -18,10 +18,9 @@ function DeckScreen() {
     // Load deck and cards using deckId //
     useEffect(() => {
         async function loadDeck() {
-            const response = readDeck(deckId);
-            const apiResponse = await response;
-            setDeck(apiResponse);
-            setCards(apiResponse.cards);
+            const response = await readDeck(deckId);
+            setDeck(response);
+            setCards(response.cards);
         }
         loadDeck();
     }, [deckId]);
