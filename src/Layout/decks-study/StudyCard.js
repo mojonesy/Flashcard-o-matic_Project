@@ -1,7 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
-import "animate.css";
 
 function StudyCard({ currentCard, setCurrentCard, cards }) {
     const history = useHistory();
