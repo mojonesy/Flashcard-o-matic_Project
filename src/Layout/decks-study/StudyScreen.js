@@ -41,7 +41,7 @@ function StudyScreen() {
                 </ol>
             </nav>
 
-            <h1>{deck.name}: Study</h1>
+            <h1>Study: {deck.name}</h1>
                 <StudyCard currentCard={currentCard} setCurrentCard={setCurrentCard} cards={cards} />
             </>
         );
@@ -62,7 +62,7 @@ function StudyScreen() {
                 </ol>
             </nav>
 
-            <h1>{deck.name}: Study</h1>
+            <h1>Study: {deck.name}</h1>
             <NotEnoughCards cardsNumber={cards.length} />
         </>
     );
