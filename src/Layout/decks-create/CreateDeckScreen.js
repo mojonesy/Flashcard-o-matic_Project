@@ -19,17 +19,13 @@ function CreateDeckScreen(){
         setDeckData({ ...deckData, [target.name]: target.value});
     };
 
-    // Handle submit, createDeck(), return to home page //
+    // Handle submit -> createDeck(), navigate to new deck page with new :deckId //
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        async function loadCreatedDeck() {
-            const response = await createDeck(deckData);
-            console.log(response);
-        }
-        loadCreatedDeck();
-        setDeckData({ ...initialFormState });
-        history.push("/");
+        createDeck(deckData)
+        .then((newDeck) => history.push(`/decks/${newDeck.id}`))
+        .catch(error => console.error);
     };
 
 
