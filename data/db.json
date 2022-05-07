@@ -9,6 +9,11 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
+    },
+    {
+      "name": "Test Deck",
+      "description": "A deck created to test the functionality of this application.",
+      "id": 3
     }
   ],
   "cards": [
@@ -48,6 +53,30 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "Is this the front of this card? 🤔",
+      "back": "Or the back???? 😏",
+      "deckId": 3,
+      "id": 8
+    },
+    {
+      "front": "How much wood can a woodchuck chuck?",
+      "back": "You tell me...",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "What's my favorite color?",
+      "back": "None of your business.",
+      "deckId": 3,
+      "id": 10
+    },
+    {
+      "front": "Do you like this app?",
+      "back": "If you don't, don't tell me.",
+      "deckId": 3,
+      "id": 11
     }
   ]
 }
