@@ -55,12 +55,12 @@ function AddCardScreen() {
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                        <Link to="/">
-                        <span className="oi oi-home" style={{marginRight: "5px"}} />
+                        <Link to="/" style={{color:"teal"}}>
+                        <span className="oi oi-home" style={{marginRight: "5px", color:"teal"}} />
                         Home
                         </Link>
                     </li>
-                    <li className="breadcrumb-item" aria-current="page">{deck.name}</li>
+                    <li className="breadcrumb-item" aria-current="page" style={{color:"teal"}}>{deck.name}</li>
                     <li className="breadcrumb-item active" aria-current="page">Add Card</li>
                 </ol>
             </nav>
@@ -98,7 +98,7 @@ function AddCardScreen() {
                     type="button" 
                     className="btn btn-secondary btn-lg"
                     style={{marginRight: "10px", marginBottom: "20px"}}
-                    onClick={() => history.push("/decks")}
+                    onClick={() => history.push(`/decks/${deckId}`)}
                     > Done
                 </button>
                 <button 
