@@ -15,21 +15,11 @@ function Home() {
 
     // Load list of decks //
     useEffect(() => {
-        const abortController = new AbortController();
         async function loadDecks() {
-            try {
-                const response = await listDecks(abortController.signal);
-                setDecks(response);
-            } catch (error){
-                if (error.name === "AbortError") {
-                    console.log(error);
-                } else {
-                    throw error;
-                }
-            }
+            const response = await listDecks();
+            setDecks(response);
         }
         loadDecks();
-        return () => abortController.abort();
     }, []);
 
 
@@ -49,7 +39,7 @@ function Home() {
                             <div className="d-flex">
                               <div className="pr-2"><ViewButton deckId={deck.id} /></div>
                               <div><StudyButton deckId={deck.id} /></div>
-                              <div className="ml-auto"><DeleteDeckButton /></div>
+                              <div className="ml-auto"><DeleteDeckButton deckId={deck.id} /></div>
                             </div>
                         </div>
                     </div>
