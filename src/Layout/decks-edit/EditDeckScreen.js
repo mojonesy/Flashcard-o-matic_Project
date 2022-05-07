@@ -26,8 +26,8 @@ function EditDeckScreen() {
     // Handle Submit, updateDeck() //
     const handleSubmit = (event) => {
         event.preventDefault();
-        updateDeck(deck);
-        history.push(`/decks/${deck.id}`);
+        updateDeck(deck)
+        .then(history.push(`/decks/${deck.id}`));
     };
 
 
