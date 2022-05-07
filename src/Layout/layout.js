@@ -6,7 +6,7 @@ import CreateDeckScreen from "./decks-create/CreateDeckScreen";
 import DeckScreen from "./decks/DeckScreen";
 import EditDeckScreen from "./decks-edit/EditDeckScreen";
 import EditCardScreen from "./deck-cards/EditCardScreen";
-import Home from "./Home/Home";
+import HomeScreen from "./Home/HomeScreen";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import Study from "./decks-study/StudyScreen";
@@ -19,7 +19,7 @@ function Layout() {
       <div className="container">
         <Switch>
           <Route exact path="/">
-            <Home />
+            <HomeScreen />
           </Route>
 
           <Route path="/decks/new">
