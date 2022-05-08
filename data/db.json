@@ -14,6 +14,11 @@
       "name": "Test Deck",
       "description": "A deck created to test the functionality of this application.",
       "id": 3
+    },
+    {
+      "name": "Cats",
+      "description": "A deck of cards about cats.",
+      "id": 4
     }
   ],
   "cards": [
@@ -48,13 +53,6 @@
       "id": 5
     },
     {
-      "cards": [],
-      "front": "b",
-      "back": "b",
-      "deckId": 1,
-      "id": 7
-    },
-    {
       "front": "Is this the front of this card? 🤔",
       "back": "Or the back???? 😏",
       "deckId": 3,
@@ -77,6 +75,24 @@
       "back": "If you don't, don't tell me.",
       "deckId": 3,
       "id": 11
+    },
+    {
+      "front": "How large is a Maine Coon?",
+      "back": "Very large.",
+      "deckId": 4,
+      "id": 13
+    },
+    {
+      "front": "What is the hair length of a Maine Coon?",
+      "back": "Long.",
+      "deckId": 4,
+      "id": 14
+    },
+    {
+      "front": "What colors are Maine Coons?",
+      "back": "All the colors.",
+      "deckId": 4,
+      "id": 15
     }
   ]
 }
