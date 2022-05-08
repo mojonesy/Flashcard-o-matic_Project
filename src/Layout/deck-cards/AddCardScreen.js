@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useHistory, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { readDeck, createCard } from "../../utils/api/index";
+import CardForm from "./CardForm";
 
 function AddCardScreen() {
-    const history = useHistory();
     const deckId = useParams().deckId;
     const [deck, setDeck] = useState("");
 
@@ -67,49 +67,19 @@ function AddCardScreen() {
 
             <h1>{deck.name}: Add Card</h1>
 
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="front" className="form-label">Front</label>
-                    <textarea 
-                        className="form-control" 
-                        id="front"
-                        name="front" 
-                        placeholder="Front side of card"
-                        required={true}
-                        style={{height: "150px"}}
-                        onChange={handleChange}
-                        value={cardData.front} 
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="back" className="form-label">Back</label>
-                    <textarea 
-                        className="form-control" 
-                        id="back" 
-                        name="back"
-                        placeholder="Back side of card"
-                        required={true} 
-                        style={{height: "150px"}}
-                        onChange={handleChange}
-                        value={cardData.back}
-                    />
-                </div>
-                <button 
-                    type="button" 
-                    className="btn btn-secondary btn-lg"
-                    style={{marginRight: "10px", marginBottom: "20px"}}
-                    onClick={() => history.push(`/decks/${deckId}`)}
-                    > Done
-                </button>
-                <button 
-                    type="Submit" 
-                    className="btn btn-primary btn-lg"
-                    style={{marginBottom: "20px"}}
-                    > Save
-                </button>
-            </form>
+                <CardForm 
+                    handleSubmit={handleSubmit}
+                    handleChange={handleChange}
+                    deckId={deckId}
+                    placeholderFront="Front side of card"
+                    placeholderBack="Back side of card"
+                    valueFront={cardData.front}
+                    valueBack={cardData.back}
+                    secondaryButton="Done"
+                    primaryButton="Save"
+                />
         </>
-    )
+    );
 
 }
 
