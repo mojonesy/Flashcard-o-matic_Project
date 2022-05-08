@@ -5,6 +5,7 @@ function DeleteCardButton({ cardId }) {
     const handleDelete = () => {
         if (window.confirm("Delete this card?\n\nYou will not be able to recover it.")) {
             deleteCard(cardId);
+            window.location.reload();
         }
     };
 
