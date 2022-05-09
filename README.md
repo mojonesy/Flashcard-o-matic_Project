@@ -53,5 +53,7 @@ Clicking any of the trashcan icons brings up a prompt in the browser, verifying 
 
 Created with [create react app](https://github.com/facebook/create-react-app)
 
+The <AddCard> and <EditCard> components utilize the same <CardForm> component.
+
 😊
 
