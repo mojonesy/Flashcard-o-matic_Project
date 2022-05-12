@@ -42,7 +42,11 @@ function StudyScreen() {
             </nav>
 
             <h1>Study: {deck.name}</h1>
-                <StudyCard currentCard={currentCard} setCurrentCard={setCurrentCard} cards={cards} />
+                <StudyCard 
+                currentCard={currentCard} 
+                setCurrentCard={setCurrentCard} 
+                cards={cards} 
+                />
             </>
         );
     }
