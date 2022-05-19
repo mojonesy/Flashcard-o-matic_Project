@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./StudyButton.css";
 
 function StudyButton({ deckId }) {
-    // TODO: retrieve deckId //
 
     return (
         <Link to={`/decks/${deckId}/study`} className="btn btn-primary">
