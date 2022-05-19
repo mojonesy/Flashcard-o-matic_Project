@@ -14,3 +14,24 @@ h6 {
 .card:last-child {
     margin-bottom: 20px;
 }
+
+/* Buttons */
+.btn-primary {
+    background-color: #008080;
+    border-color: #008080;
+}
+
+.btn-primary:hover {
+    background-color: #009B9B;
+    border-color: #009B9B;
+}
+
+.btn-secondary {
+    background-color: #34495E;
+    border-color: #34495E;
+}
+
+.btn-secondary:hover {
+    background-color: #435F7A;
+    border-color: #435F7A;
+}
